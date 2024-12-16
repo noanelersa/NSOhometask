@@ -14,5 +14,6 @@ def main():
     start = Pipeline(API_KEY, DB_NAME)
     start.run(START_DATE, END_DATE)
 
+
 if __name__ == '__main__':
     main()

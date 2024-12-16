@@ -8,7 +8,7 @@ class SQLiteDBHandler (DBHandlerABC):
         self.name = name
         self.connection = sqlite3.connect(name)
 
-    def createTable(self, dict)-> None:
+    def createTable(self, dict) -> None:
         try:
             columns = ""
             for name, type in dict.items():
@@ -26,7 +26,7 @@ class SQLiteDBHandler (DBHandlerABC):
         finally:
             cursor.close()
 
-    def insertData(self, data:dict)-> None:
+    def insertData(self, data: dict) -> None:
         try:
             columns = ", ".join(data.keys())
             cursor = self.connection.cursor()
@@ -40,7 +40,7 @@ class SQLiteDBHandler (DBHandlerABC):
         finally:
             cursor.close()
 
-    def print_table(self)-> None:
+    def print_table(self) -> None:
         try:
             cursor = self.connection.cursor()
             cursor.execute(f"""SELECT * from {self.name}""")
@@ -52,7 +52,7 @@ class SQLiteDBHandler (DBHandlerABC):
         finally:
             cursor.close()
 
-    def readData(self, query:str, params=()):
+    def readData(self, query: str, params=()):
         try:
             cursor = self.connection.cursor()
             cursor.execute(query, params)
@@ -63,7 +63,7 @@ class SQLiteDBHandler (DBHandlerABC):
         finally:
             cursor.close()
 
-    def updateData(self, query:str, params)-> None:
+    def updateData(self, query: str, params) -> None:
         try:
             cursor = self.connection.cursor()
             cursor.execute(query, params)
@@ -73,7 +73,7 @@ class SQLiteDBHandler (DBHandlerABC):
         finally:
             cursor.close()
 
-    def deleteData(self, query:str, params)-> None:
+    def deleteData(self, query: str, params) -> None:
         try:
             cursor = self.connection.cursor()
             cursor.execute(query, params)
