@@ -16,9 +16,4 @@ class APInasaClient(APIClient):
             json.dump(data, file, indent=4)
         return data
 
-if __name__ == "__main__":
-    api_key = "atGTDOlBIj4CkCcWdEpTTJfQ3okIe5kBnkgRpB0N" 
-    nasa_client = APInasaClient(api_key)
-    
-    data = nasa_client.fetch_data("2024-12-15", "2024-12-22")
-    print(data)
+

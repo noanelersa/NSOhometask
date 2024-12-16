@@ -1,60 +1,93 @@
 import sqlite3
-import DBHandler
+from DBHandler import DBHandlerABC
 
-class SQLightDBHandler (DBHandler):
+class SQLightDBHandler (DBHandlerABC):
 
     def __init__(self, name):
         self.name= name
         self.connection= sqlite3.connect(name)
-        self.cursor = self.connection.cursor()
 
-    def createTable(self):
+    def createTable(self, dict):
         try:
-            self.cursor.execute(
-                """CREATE TABLE IF NOT EXISTS Asteroids (
-                    name TEXT PRIMARY KEY,
-                    diameter REAL NOT NULL,
-                    approach_date TEXT NOT NULL,
-                    velocity REAL NOT NULL )""")     
-        #except sqlite3.   ???????
-
-        finally:
+            columns=""
+            for name, type in dict.items():
+               columns+= f"{name} {type} NOT NULL, \n" 
+            columns = columns.rstrip(", \n")
+            cursor = self.connection.cursor()
+            cursor.execute(f"DROP TABLE IF EXISTS {self.name}")
+            cursor.execute(
+                f"""CREATE TABLE IF NOT EXISTS {self.name} (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    {columns} )""")  
             self.connection.commit()
-            self.cursor.close()
+        except Exception as err:
+            print('Creation failed: \nError: %s' % str(err))
+        finally:
+            cursor.close()
+
     
     def insertData(self, data):
         try:
-            self.cursor.execute(
-            """INSERT INTO Asteroids(name, diameter, approach_date,velocity) 
-            VALUES (?, ?, ?, ?)""",
-            data['name'],data['diameter'], data['approach_data'],data['velocity']
-        )
-        #except sqlite3.  ??????????
-        finally:
+            columns = ", ".join(data.keys())
+            cursor = self.connection.cursor()
+            placeholders = ", ".join("?" * len(data))
+            query = f"""INSERT INTO {self.name}({columns}) 
+            VALUES ({placeholders})"""
+            cursor.execute(query, tuple(data.values()))
             self.connection.commit()
-            self.cursor.close()
+        except Exception as err:
+            print('Insertion failed \nError: %s' %  str(err))
+        finally:
+            cursor.close()
 
     
+    def print_table(self):
+        try:
+            cursor = self.connection.cursor()
+            cursor.execute(f"""SELECT * from {self.name}""")
+            results= cursor.fetchall()
+            for result in results:
+                print(result)
+        except Exception as err:
+            print('Print failed \nError: %s' %  str(err))
+        finally:
+            cursor.close()
+    
     def readData(self, query, params=()):
-        self.cursor.execute(query, params)
-        result = self.cursor.fetchall()
-        self.connection.commit()
-        self.cursor.close()
+        try:
+            cursor = self.connection.cursor()
+            cursor.execute(query, params)
+            result = cursor.fetchall()
+            return result
+        except Exception as err:
+            print('Read Query failed \nError: %s' %  str(err))
+        finally:
+            cursor.close()
         
     
     def updateData(self, query, params):
-        self.cursor.execute(query,params)
-        self.connection.commit()
-        self.cursor.close()
+        try:
+            cursor = self.connection.cursor()
+            cursor.execute(query,params)
+            self.connection.commit()
+        except Exception as err:
+            print('Update failed \nError: %s' %  str(err))
+        finally:
+            cursor.close()
+        
 
     def deleteData(self, query, params):
-        self.cursor.execute(query,params)
-        self.connection.commit()
-        self.cursor.close()
-
+        try:
+            cursor = self.connection.cursor()
+            cursor.execute(query,params)
+            self.connection.commit()
+        except Exception as err:
+            print('Deletion failed \nError: %s' %  str(err))
+        finally:
+            cursor.close()
+        
     def close_connection (self):
         self.connection.close()
-    
 
 
  

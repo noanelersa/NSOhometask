@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class DatabaseHandlerInterface(ABC):
+class DBHandlerABC(ABC):
     @abstractmethod
     def createTable(self):
         raise NotImplementedError("Subclasses must implement 'createTable'")

@@ -1365,18 +1365,18 @@
                 "close_approach_data": [
                     {
                         "close_approach_date": "2024-12-21",
-                        "close_approach_date_full": "2024-Dec-21 09:42",
-                        "epoch_date_close_approach": 1734774120000,
+                        "close_approach_date_full": "2024-Dec-21 09:39",
+                        "epoch_date_close_approach": 1734773940000,
                         "relative_velocity": {
-                            "kilometers_per_second": "3.7804897423",
-                            "kilometers_per_hour": "13609.7630723498",
-                            "miles_per_hour": "8456.5775045942"
+                            "kilometers_per_second": "3.7806565513",
+                            "kilometers_per_hour": "13610.3635845948",
+                            "miles_per_hour": "8456.95063955"
                         },
                         "miss_distance": {
-                            "astronomical": "0.1700724393",
-                            "lunar": "66.1581788877",
-                            "kilometers": "25442474.664984291",
-                            "miles": "15809220.6735175758"
+                            "astronomical": "0.1700770653",
+                            "lunar": "66.1599784017",
+                            "kilometers": "25443166.704730911",
+                            "miles": "15809650.6870761318"
                         },
                         "orbiting_body": "Earth"
                     }
@@ -3234,18 +3234,18 @@
                 "close_approach_data": [
                     {
                         "close_approach_date": "2024-12-18",
-                        "close_approach_date_full": "2024-Dec-18 01:55",
-                        "epoch_date_close_approach": 1734486900000,
+                        "close_approach_date_full": "2024-Dec-18 01:54",
+                        "epoch_date_close_approach": 1734486840000,
                         "relative_velocity": {
-                            "kilometers_per_second": "10.4733235822",
-                            "kilometers_per_hour": "37703.9648960294",
-                            "miles_per_hour": "23427.7775210912"
+                            "kilometers_per_second": "10.471120471",
+                            "kilometers_per_hour": "37696.0336957501",
+                            "miles_per_hour": "23422.8493816732"
                         },
                         "miss_distance": {
-                            "astronomical": "0.0223883894",
-                            "lunar": "8.7090834766",
-                            "kilometers": "3349255.366970578",
-                            "miles": "2081130.7817188564"
+                            "astronomical": "0.0223824619",
+                            "lunar": "8.7067776791",
+                            "kilometers": "3348368.625596153",
+                            "miles": "2080579.7861787914"
                         },
                         "orbiting_body": "Earth"
                     }
@@ -4195,41 +4195,41 @@
                 "neo_reference_id": "54506635",
                 "name": "(2024 XC17)",
                 "nasa_jpl_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=54506635",
-                "absolute_magnitude_h": 27.319,
+                "absolute_magnitude_h": 27.317,
                 "estimated_diameter": {
                     "kilometers": {
-                        "estimated_diameter_min": 0.0091359766,
-                        "estimated_diameter_max": 0.0204286646
+                        "estimated_diameter_min": 0.009144395,
+                        "estimated_diameter_max": 0.0204474888
                     },
                     "meters": {
-                        "estimated_diameter_min": 9.1359765593,
-                        "estimated_diameter_max": 20.4286646273
+                        "estimated_diameter_min": 9.1443949809,
+                        "estimated_diameter_max": 20.4474887903
                     },
                     "miles": {
-                        "estimated_diameter_min": 0.0056768309,
-                        "estimated_diameter_max": 0.0126937798
+                        "estimated_diameter_min": 0.0056820619,
+                        "estimated_diameter_max": 0.0127054766
                     },
                     "feet": {
-                        "estimated_diameter_min": 29.9736773347,
-                        "estimated_diameter_max": 67.023180056
+                        "estimated_diameter_min": 30.001296829,
+                        "estimated_diameter_max": 67.0849391228
                     }
                 },
                 "is_potentially_hazardous_asteroid": false,
                 "close_approach_data": [
                     {
                         "close_approach_date": "2024-12-17",
-                        "close_approach_date_full": "2024-Dec-17 22:54",
-                        "epoch_date_close_approach": 1734476040000,
+                        "close_approach_date_full": "2024-Dec-17 22:53",
+                        "epoch_date_close_approach": 1734475980000,
                         "relative_velocity": {
-                            "kilometers_per_second": "4.8003340311",
-                            "kilometers_per_hour": "17281.2025118074",
-                            "miles_per_hour": "10737.8671940728"
+                            "kilometers_per_second": "4.7992618985",
+                            "kilometers_per_hour": "17277.3428347503",
+                            "miles_per_hour": "10735.468940848"
                         },
                         "miss_distance": {
-                            "astronomical": "0.0208087256",
-                            "lunar": "8.0945942584",
-                            "kilometers": "3112941.027174472",
-                            "miles": "1934291.8599808336"
+                            "astronomical": "0.0208054312",
+                            "lunar": "8.0933127368",
+                            "kilometers": "3112448.191951544",
+                            "miles": "1933985.6263735472"
                         },
                         "orbiting_body": "Earth"
                     }
@@ -4712,18 +4712,18 @@
                 "close_approach_data": [
                     {
                         "close_approach_date": "2024-12-16",
-                        "close_approach_date_full": "2024-Dec-16 00:27",
-                        "epoch_date_close_approach": 1734308820000,
+                        "close_approach_date_full": "2024-Dec-16 00:26",
+                        "epoch_date_close_approach": 1734308760000,
                         "relative_velocity": {
-                            "kilometers_per_second": "4.8374349741",
-                            "kilometers_per_hour": "17414.765906835",
-                            "miles_per_hour": "10820.8582936109"
+                            "kilometers_per_second": "4.83034318",
+                            "kilometers_per_hour": "17389.2354480942",
+                            "miles_per_hour": "10804.9946594005"
                         },
                         "miss_distance": {
-                            "astronomical": "0.0234425098",
-                            "lunar": "9.1191363122",
-                            "kilometers": "3506949.533534126",
-                            "miles": "2179117.3931218988"
+                            "astronomical": "0.0233983566",
+                            "lunar": "9.1019607174",
+                            "kilometers": "3500344.308860442",
+                            "miles": "2175013.0968284196"
                         },
                         "orbiting_body": "Earth"
                     }
@@ -5650,15 +5650,15 @@
                         "close_approach_date_full": "2024-Dec-15 08:58",
                         "epoch_date_close_approach": 1734253080000,
                         "relative_velocity": {
-                            "kilometers_per_second": "14.5201837033",
-                            "kilometers_per_hour": "52272.6613319617",
-                            "miles_per_hour": "32480.1989259625"
+                            "kilometers_per_second": "14.5156064332",
+                            "kilometers_per_hour": "52256.1831594757",
+                            "miles_per_hour": "32469.9600303976"
                         },
                         "miss_distance": {
-                            "astronomical": "0.0468359721",
-                            "lunar": "18.2191931469",
-                            "kilometers": "7006561.665539427",
-                            "miles": "4353675.5363490126"
+                            "astronomical": "0.0468213352",
+                            "lunar": "18.2134993928",
+                            "kilometers": "7004372.016476024",
+                            "miles": "4352314.9515121712"
                         },
                         "orbiting_body": "Earth"
                     }
