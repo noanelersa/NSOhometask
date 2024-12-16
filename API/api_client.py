@@ -1,10 +1,10 @@
 import requests
 
 class APIClient:
-    def get(self,url):
+    def get(self,url:str):
         try:
             response = requests.get(url)
-            response.raise_for_status() #check if it worked- 200 ok?
+            response.raise_for_status() 
             return response.json()
         except Exception as err:
             print('Creation failed: \nError: %s' % str(err))

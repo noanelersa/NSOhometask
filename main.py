@@ -1,13 +1,18 @@
-from DBSQLightHandler import SQLightDBHandler
-from api_nasa_client import APInasaClient
-from pipline import Pipline
+from database.DBSQLiteHandler import SQLiteDBHandler
+from pipelines.pipeline import Pipeline
+from config import API_KEY, DB_NAME, START_DATE, END_DATE
 
-def mainA():
 
-    start = Pipline('atGTDOlBIj4CkCcWdEpTTJfQ3okIe5kBnkgRpB0N', 'Asteroids')
-    start.run('2024-12-20', '2024-12-22')
-    
-
+def main():
+    dbHandler = SQLiteDBHandler(DB_NAME)
+    dbHandler.createTable({
+        'name': 'TEXT',
+        'diameter': 'REAL',
+        'approachDate': 'TEXT',
+        'velocity': 'REAL'
+    })
+    start = Pipeline(API_KEY, DB_NAME)
+    start.run(START_DATE, END_DATE)
 
     """sqlightDB = SQLightDBHandler("Asteroids")
     sqlightDB.createTable({'name':'TEXT', 'diameter':'REAL', 'approach_date':'TEXT', 'velocity':'REAL'})
@@ -36,5 +41,5 @@ def mainA():
     #print(data)"""
 
 
-if __name__=='__main__':
-    mainA()
+if __name__ == '__main__':
+    main()
