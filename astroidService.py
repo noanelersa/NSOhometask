@@ -9,7 +9,7 @@ class AsteroidService():
         self.dbHandler.createTable({
             'name': 'TEXT',
             'diameter': 'REAL',
-            'approach_date': 'TEXT',
+            'approachDate': 'TEXT',
             'velocity': 'REAL'
         })
     def insertAsteroids(self, data):
@@ -17,13 +17,15 @@ class AsteroidService():
 
     def find_5_largest_asteroids(self):
         today_date = datetime.today().strftime("%Y-%m-%d")
-        end_date = (datetime.today() + datetime.timedelta(days=30)).strftime("%Y-%m-%d")
+        end_date = (datetime.today() + timedelta(days=30)).strftime("%Y-%m-%d")
         params=(today_date,end_date)
-        return self.dbHandler.readData("""SELECT name, diameter, approach_date, velocity
+        
+        result= self.dbHandler.readData(f"""SELECT name, diameter, approachDate, velocity
             FROM Asteroids
-            WHERE approach_date BETWEEN ? AND ?
+            WHERE approachDate BETWEEN ? AND ?
             ORDER BY diameter DESC
             LIMIT 5""", params)
+        return result
 
     def closeDBconnection(self):
         self.dbHandler.close_connection()

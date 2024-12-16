@@ -1,11 +1,12 @@
 from DBSQLightHandler import SQLightDBHandler
 from api_nasa_client import APInasaClient
-import pipline
+from pipline import Pipline
 
 def mainA():
 
-    start = pipline('atGTDOlBIj4CkCcWdEpTTJfQ3okIe5kBnkgRpB0N', 'Asteroids')
-    #start.run()
+    start = Pipline('atGTDOlBIj4CkCcWdEpTTJfQ3okIe5kBnkgRpB0N', 'Asteroids')
+    start.run('2024-12-20', '2024-12-22')
+    
 
 
     """sqlightDB = SQLightDBHandler("Asteroids")

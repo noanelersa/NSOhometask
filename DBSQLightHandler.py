@@ -8,6 +8,7 @@ class SQLightDBHandler (DBHandlerABC):
         self.connection= sqlite3.connect(name)
 
     def createTable(self, dict):
+        #print(dict)
         try:
             columns=""
             for name, type in dict.items():
