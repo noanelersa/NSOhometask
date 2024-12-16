@@ -1,9 +1,14 @@
-from datetime import datetime, timedelta
 from DBSQLightHandler import SQLightDBHandler
 from api_nasa_client import APInasaClient
+import pipline
 
 def mainA():
-    sqlightDB = SQLightDBHandler("Asteroids")
+
+    start = pipline('atGTDOlBIj4CkCcWdEpTTJfQ3okIe5kBnkgRpB0N', 'Asteroids')
+    #start.run()
+
+
+    """sqlightDB = SQLightDBHandler("Asteroids")
     sqlightDB.createTable({'name':'TEXT', 'diameter':'REAL', 'approach_date':'TEXT', 'velocity':'REAL'})
     sqlightDB.insertData({
         'name': 'Asteroid1',
@@ -22,12 +27,13 @@ def mainA():
     sqlightDB.readData("SELECT * FROM Asteroids")
     sqlightDB.updateData( "UPDATE Asteroids SET diameter = ?, velocity = ? WHERE name = ?", (1500.5, 25.75, 'Asteroid1'))
     sqlightDB.print_table()
-    print (datetime.today().strftime("%Y-%m-%d"))
+    
 
     #api_key = "atGTDOlBIj4CkCcWdEpTTJfQ3okIe5kBnkgRpB0N"
     #nasa_client = APInasaClient(api_key)
     #data = nasa_client.fetch_data("2024-12-15", "2024-12-22")
-    #print(data)
+    #print(data)"""
+
 
 if __name__=='__main__':
     mainA()
