@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 from DBSQLightHandler import SQLightDBHandler
 from api_nasa_client import APInasaClient
 
@@ -21,6 +22,7 @@ def mainA():
     sqlightDB.readData("SELECT * FROM Asteroids")
     sqlightDB.updateData( "UPDATE Asteroids SET diameter = ?, velocity = ? WHERE name = ?", (1500.5, 25.75, 'Asteroid1'))
     sqlightDB.print_table()
+    print (datetime.today().strftime("%Y-%m-%d"))
 
     #api_key = "atGTDOlBIj4CkCcWdEpTTJfQ3okIe5kBnkgRpB0N"
     #nasa_client = APInasaClient(api_key)
